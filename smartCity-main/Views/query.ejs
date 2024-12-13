@@ -1,0 +1,30 @@
+<%- include("partials/links") -%>
+
+
+
+<form action="/query" method="post">
+    <div class="container-fluid login">
+
+
+    <h1 class="h3 mb-3 fw-normal"> Grievance </h1> 
+
+
+    <div class="form-floating">
+        <input type="text" class="form-control" id="floatingPassword" name="subject" required placeholder="Admin key" autocomplete="off">
+        <label for="floatingPassword">Subject:</label>
+      </div>
+
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingPassword" name="address" required placeholder="Admin key" autocomplete="off">
+        <label for="floatingPassword">Adress:</label>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Grievance Description : </label>
+        <textarea class="form-control" name="grievance" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+      <br>
+
+    <button class="w-100 login-submit btn btn-lg btn-primary" type="submit">Raise Grievance</button>
+</div>
+  </form>

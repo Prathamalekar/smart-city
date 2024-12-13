@@ -1,0 +1,42 @@
+<%- include("partials/links") -%>
+
+<h1 style="text-align: center ;"> <%= title %> </h1> <br><br>
+
+<% if(ctWstData.length == 0){ %>
+  <h1 style="text-align: center ; color:green"> Congrats !! Your City is Clean !! </h1>
+ <% } %>
+
+<% ctWstData.forEach(function(wstdata){  %>
+
+
+    <div class="row" style="display: inline-block; margin-top: 15px;">
+
+        <div class="card " style="width: 18rem; margin: 20px;">
+        
+            <% if(wstdata.img) {  %>
+            <img src="../uploads/<%= wstdata.img %>" class="card-img-top dbimg" alt="...">
+            <% } %>
+        
+            <div class="card-body">
+              <h5 class="card-title"> <b>City :</b> <%= wstdata.city  %></h5>
+              <p class="card-text"><b>Query : </b><%= wstdata.query  %></p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><b>Name :</b> <%= wstdata.name  %></li>
+              <li class="list-group-item"><b>Email :</b> <a href="mailto:<%= wstdata.email  %>"> <%= wstdata.email  %> </a></li>
+              <li class="list-group-item"><b>Phone No :</b> <%= wstdata.phone  %></li>
+            </ul>
+        
+        <br>
+        
+            <form action="/resolve" method="post">
+                <input type="text" style="display: none;"  value ="<%= wstdata._id %>" name="wId">
+                <button type="submit" value="approve" name="wManage" id="aprv" class="btn btn-outline-success btn-md px-4 me-sm-3 fw-bold">Approve</button>
+                      <button type="submit" value="delete" name="wManage" id="del" class="btn btn-outline-danger btn-md px-4">Ignore</button>
+            </form>
+        
+          </div>
+        </div>
+        
+        
+<%  })  %>

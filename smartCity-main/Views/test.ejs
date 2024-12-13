@@ -1,0 +1,66 @@
+<%- include("partials/links") -%>
+
+    <h1>
+        <%= title %>
+    </h1>
+
+    <!-- <table>
+    <tr>
+        <th>firstname</th>
+        <th>Lastname</th>
+        <th>email </th>
+    </tr>
+    <%  records.forEach(function(data){  %>
+    <tr>
+        <td><%= data.firstname %> </td>
+        <td><%= data.lastname %> </td>
+        <td><%= data.email %> </td>
+    </tr>
+    <%  })   %>
+</table> -->
+
+
+
+    <table>
+        <tr>
+            <td>
+            <th>City </th>
+            <th> Image </th>
+            <th> Query </th>
+        </td>
+        </tr>
+        <% records.forEach(function(data){ %>
+            <tr>
+                <td>
+                  <th>  <%= data.city %>  </th>
+                
+                <th>
+                    <% if(data.img) { %>       
+                        <img src="../uploads/<%= data.img%> " alt="img" class ="dbimg" height="300px" width="300px">
+                        <% } %>
+                </th>
+                <th>
+                    <%= data.query %> </th>
+                </td>
+            </tr>
+            <% }) %>
+  
+
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone No</th>
+
+                </tr>
+               
+                <tr>
+                    <td> <%= info.firstname %> </td>
+                    <td> <%= info.email %> </td>
+                    <td> <%= info.phone %> </td>
+                </tr>
+       
+            </table>
+
+
+    

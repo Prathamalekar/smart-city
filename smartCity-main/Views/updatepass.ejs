@@ -1,0 +1,33 @@
+<%- include("partials/links") -%>
+
+
+
+<form action="/updatepass" method="post">
+    <div class="container-fluid login">
+
+
+    <h1 class="h3 mb-3 fw-normal"> Change Password </h1> 
+
+    <div class="form-floating">
+        <input type="text" class="form-control" id="floatingPassword" name="phone" required placeholder="phone number" autocomplete="off">
+        <label for="floatingPassword"> Phone number </label>
+      </div>
+
+<div class="form-floating">
+    <input type="password" class="form-control" id="floatingPassword" name="password" required placeholder="new password" autocomplete="off">
+    <label for="floatingPassword"> password</label>
+  </div>
+  <div class="form-floating">
+      <input type="text" class="form-control" id="floatingPassword" name="cpassword" required placeholder="Confirm new password" autocomplete="off">
+      <label for="floatingPassword">confirm  password</label>
+    </div>
+
+    <%  if(message.length > 0) { %>
+      <p class="errmsg">
+        <%= message %>
+      </p>
+      <% } %>
+
+    <button class="w-100 login-submit btn btn-lg btn-primary" type="submit">Submit</button>
+
+    </div>

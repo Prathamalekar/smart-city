@@ -1,0 +1,34 @@
+<%- include("partials/links") -%>
+
+<h1 style="text-align: center;">  <%= title2 %>  </h1>
+<br>
+
+
+
+<%   records.forEach(function(data){  %>
+
+    <p style="display:none;"><%= data._id %></p>
+
+    <div class="row" style="display: inline-block; margin-top: 15px;">
+
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"> <b>Subject :</b> <%= data.subject  %></li>
+      <li class="list-group-item"><b>Address :</b> <%= data.address %></li>
+      <li class="list-group-item"><b>Grievance :</b> <%= data.grievance  %></li>
+      <li class="list-group-item"> <b>Name :</b> <%= data.name  %></li>
+      <li class="list-group-item"><b>Email :</b> <a href="mailto:<%= data.email  %>?subject=<%= data.subject  %>"> <%= data.email  %></a></li>
+      <li class="list-group-item"> <b>Phone No :</b> <%= data.phone  %></li>
+    </ul>
+ 
+<br>
+
+<form action="/grievance" method="post">
+    <input type="text" style="display: none;" value ="<%= data._id %>" name="id">
+    <button type="submit" value="approve" name="first" class="btn btn-outline-success btn-md px-4 me-sm-3 fw-bold">Approve</button>
+          <button type="submit" value="delete" name="first" class="btn btn-outline-danger btn-md px-4">Ignore</button>
+</form>
+</div>
+  </div>
+
+  <% })  %>

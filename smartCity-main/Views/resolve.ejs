@@ -1,0 +1,72 @@
+<%- include("partials/links") -%>
+
+
+<h3>
+    <a href="/grievance" class="btn btn-lg btn-outline-info">View Grievances</a>
+</h3>
+
+<h1 style="text-align: center;">  <%= title %>  </h1>
+
+
+<!-- <table>
+    <%   records.forEach(function(data){  %>
+    <tr>
+        <td> City : <%= data.city  %>  </td>
+    </tr>
+    <% if(data.img) {  %>
+    <tr>   
+        <td> image :  <img src="../uploads/<%= data.img %>" alt="img" class="dbimg"> </td>
+    </tr>
+    <% } %>
+    <tr>
+        <td> Query : <%= data.query  %>  </td>
+    </tr>
+
+    <tr>
+        <td> Username : <%= data.name  %>  </td>
+    </tr>
+    <tr>
+        <td> Email Id : <%= data.email  %>  </td>
+    </tr>
+    <tr>
+        <td> Phone No  : <%= data.phone  %>  </td>
+    </tr>
+
+    <% })  %>
+</table> -->
+
+<%   records.forEach(function(data){  %>
+
+    <div class="row" style="display: inline-block; margin-top: 15px;">
+
+<div class="card " style="width: 18rem; margin: 20px;">
+
+    <% if(data.img) {  %>
+    <img src="../uploads/<%= data.img %>" class="card-img-top dbimg" alt="...">
+    <% } %>
+
+    <div class="card-body">
+      <h5 class="card-title"> <b>City :</b> <%= data.city  %></h5>
+      <p class="card-text"><b>Query : </b><%= data.query  %></p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><b>Name :</b> <%= data.name  %></li>
+      <li class="list-group-item"><b>Email :</b> <a href="mailto:<%= data.email  %>"> <%= data.email  %> </a></li>
+      <li class="list-group-item"><b>Phone No :</b> <%= data.phone  %></li>
+    </ul>
+
+<br>
+
+    <form action="/resolve" method="post">
+        <input type="text" style="display: none;"  value ="<%= data._id %>" name="wId">
+        <button type="submit" value="approve" name="wManage" id="aprv" class="btn btn-outline-success btn-md px-4 me-sm-3 fw-bold">Approve</button>
+              <button type="submit" value="delete" name="wManage" id="del" class="btn btn-outline-danger btn-md px-4">Ignore</button>
+    </form>
+
+  </div>
+</div>
+
+
+  <% })  %>
+
+ 

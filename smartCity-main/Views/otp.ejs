@@ -1,0 +1,17 @@
+<%- include("partials/links") -%>
+
+
+
+<form action="/otp" method="post">
+    <div class="container-fluid login">
+
+
+    <h1 class="h3 mb-3 fw-normal"> Enter OTP </h1> 
+
+
+    <div class="form-floating">
+      <input type="number" class="form-control" id="floatingInput" name="otp" required placeholder="enter otp" autocomplete="off">
+      <label for="floatingInput">OTP</label>
+    </div>
+
+    <button class="w-100 login-submit btn btn-lg btn-primary" type="submit">Verify</button>

@@ -1,0 +1,70 @@
+<%- include("partials/links") -%>
+
+<%  if(message.length > 0) { %>
+  <p class="errmsg-reg">
+    <%= message %>
+  </p>
+  <% } %>
+
+<div class="registration">
+  <h2 id="regTitle">Citizen Registration</h2>
+    <form action="/register" method="post" >
+      <div class="row g-2">
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">First Name</label>
+            <input type="text" class="form-control"  name="firstname" required>
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Last Name</label>
+            <input type="text" class="form-control"  name="lastname" required>
+          </div>
+
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Select Gender</label><br>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label>
+          </div>
+
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Phone no.</label>
+            <input type="tel" class="form-control" name="phone" required>
+          </div>
+
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control"  name="email" required>
+          </div>
+
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Date of Birth</label>
+            <input type="date" class="form-control"  name="dob" required>
+          </div>
+
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label" >Password</label>
+            <input type="password" class="form-control"  name="password" required>
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Confirm Password</label>
+            <input type="text" class="form-control"  name="cpassword" required>
+          </div>
+
+          <div class="form-check col-md-6">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+            <label class="form-check-label" for="invalidCheck2">
+              Agree to terms and conditions
+            </label><br><a href="https://policies.google.com/terms?hl=en-in">privacy policy & terms and conditions</a>
+          </div>
+          <div class="col-md-6 d-grid reg-submit">
+            <button type="submit" class="btn btn-primary">Sign in</button>
+          </div>
+        </div>
+
+      
+        
+      </form>
+</div>

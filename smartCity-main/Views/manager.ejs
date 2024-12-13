@@ -1,0 +1,47 @@
+<%- include("partials/links") -%>
+
+<form action="/management" method="post" enctype="multipart/form-data">
+  <div class="container-fluid login">
+
+
+  <h1 class="h3 mb-3 fw-normal"> Post Your Query </h1> 
+
+  <div class="col-auto form-floating">
+    <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+    <select class="form-select" id="autoSizingSelect" name="options">
+      <option selected>Choose City....</option>
+      <option value="pune">Pune</option>
+      <option value="mumbai">Mumbai</option>
+      <option value="delhi">Delhi</option>
+      <option value="banglore">Banglore</option>
+      <option value="amravati">Amravati</option>
+      <option value="nagpur">Nagpur</option>
+      <option value="nanded">Nanded</option>
+      <option value="sangali">Sangali</option>
+      <option value="latur">Latur</option>
+      <option value="nashik">Nashik</option>
+    </select>
+  </div>
+  
+  <br>
+
+  <form>
+    <div class="form-group">
+      <label for="exampleFormControlFile1">Upload Photo</label><br>
+      <input type="file" class="form-control-file" name="file" id="exampleFormControlFile1">
+    </div>
+  </form>
+
+  <br>
+
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Description : </label>
+    <textarea class="form-control" name="query" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+
+  <br>
+
+  <button class="w-100 login-submit btn btn-lg btn-primary" type="submit"> Post Your Query </button>
+
+</div>
+</form>

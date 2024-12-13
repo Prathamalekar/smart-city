@@ -1,0 +1,14 @@
+<%- include("partials/links") -%>
+
+<form action="/login" method="post">
+    <div class="container-fluid login">
+
+<span style="font-weight: bold; text-align: center;">Don't have an account . <a href="/register">Register here</a></span><br><hr>
+
+    <h1 class="h3 mb-3 fw-normal login-head" > Login</h1> 
+     <input type="radio" name="role" id="" value="admin" required >Admin
+     <input type="radio" name="role" id="" value="citizen" required>Citizen
+     <br><br>
+     <button class="w-100 login-submit btn btn-lg btn-primary" type="submit"> Proceed to Login</button>
+
+  </form>
